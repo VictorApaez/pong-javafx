@@ -12,9 +12,16 @@ public class Paddle extends Rectangle {
         dy = 0;
     }
 
-    public void update() {
+    public void update(Wall topWall, Wall bottomWall) {
         setY(getY() + dy);
-        // TODO: Detect and handle collisions with the walls
+        if (getY() < topWall.getHeight()) {
+            setY(topWall.getHeight());
+        }
+
+        // check for collision with bottom wall
+        if (getY() + getHeight() > bottomWall.getY()) {
+            setY(bottomWall.getY() - getHeight());
+        }
     }
 
     public void setPosition(double x, double y) {

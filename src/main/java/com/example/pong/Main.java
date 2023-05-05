@@ -2,6 +2,9 @@ package com.example.pong;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.Group;
+import javafx.scene.paint.Color;
 
 public class Main extends Application {
 
@@ -14,6 +17,17 @@ public class Main extends Application {
 
         // Set up the stage and show it
         primaryStage.setTitle("Pong");
+        // Create the ball object
+        Ball ball = new Ball();
+        ball.setPosition(300, 200);
+
+// Create a Group object and add the ball to it
+        Group root = new Group();
+        root.getChildren().add(ball);
+
+// Set up the scene with the Group object
+        Scene scene = new Scene(root, 600, 400, Color.BLACK);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 

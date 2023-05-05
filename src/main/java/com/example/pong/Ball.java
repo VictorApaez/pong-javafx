@@ -9,13 +9,12 @@ public class Ball extends Circle {
     private double dy;
 
     public Ball() {
-        super(10, Color.WHITE); // Create a white circle with a radius of 10 pixels
-        dx = 5; // Set the initial horizontal velocity of the ball
-        dy = 5; // Set the initial vertical velocity of the ball
+        super(10, Color.WHITE);
+        dx = 5;
+        dy = 5;
     }
 
     public void update() {
-        // Update the position of the ball based on its velocity
         setCenterX(getCenterX() + dx);
         setCenterY(getCenterY() + dy);
 

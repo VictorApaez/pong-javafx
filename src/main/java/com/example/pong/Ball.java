@@ -38,21 +38,6 @@ public class Ball extends Circle {
             dx = -dx;
             System.out.println("Ball collided with right paddle.");
         }
-
-        // Goal
-        if (getCenterX() + 30 < 0 || getCenterX() - 30 > 600) {
-            // Set the ball's position back to the center of the game area
-            setPosition(300, 200);
-            // Set the ball's velocity to a random value to make the game more interesting
-
-
-            Random random = new Random();
-            int randomize = Math.random() > 0.5 ? -1 : 1;
-            int min = 2 * randomize;
-            randomize = Math.random() > 0.5 ? -1 : 1;
-            int max = 4 * randomize;
-            setVelocity(max, min);
-        }
     }
 
 
